@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:bloc_2/wether%20app/services/api_source.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -6,7 +7,8 @@ class WeatherService {
   //base information
 
   String baseUrl = 'http://api.weatherapi.com/v1';
-  String apikey = '6e5ddbb0d5d242d796b121127240409';
+  //visit https://www.weatherapi.com/ to get ur api key
+  String apikey = ApiSource.get;
 
   //main work
   Future<WeatherData> getWeather({required String location}) async {
